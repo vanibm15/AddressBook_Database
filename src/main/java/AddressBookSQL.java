@@ -13,7 +13,6 @@ public class AddressBookSQL {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver loaded!");
         } catch (ClassNotFoundException e) {
-
             throw new IllegalStateException("cannot find the driver in the classpath!", e);
         }
         try {

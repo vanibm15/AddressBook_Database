@@ -14,6 +14,7 @@ public class AddressBookSQL {
             System.out.println("Driver loaded!");
         } catch (ClassNotFoundException e) {
 
+
             throw new IllegalStateException("cannot find the driver in the classpath!", e);
         }
         try {

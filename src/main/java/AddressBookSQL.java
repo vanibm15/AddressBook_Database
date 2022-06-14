@@ -12,6 +12,7 @@ public class AddressBookSQL {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver loaded!");
+
         } catch (ClassNotFoundException e) {
 
 
@@ -23,7 +24,7 @@ public class AddressBookSQL {
             System.out.println("connection done successful!!" + con);
             Statement statement = con.createStatement();
            // statement.execute("delete from AddressBook where firstname='dimpu''");
-            ResultSet resultSet =statement.executeQuery("Select * from AddressBook where city='bangalore'");
+            ResultSet resultSet =statement.executeQuery("Select count(*) from AddressBook ");
             while (resultSet.next()){
                 System.out.println("firstname" +resultSet.getString("firstname"));
                 System.out.println("lastname" +resultSet.getString("lastname"));

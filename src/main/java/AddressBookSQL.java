@@ -22,7 +22,8 @@ public class AddressBookSQL {
             con = DriverManager.getConnection(jdbcURL, username, password);
             System.out.println("connection done successful!!" + con);
             Statement statement = con.createStatement();
-            ResultSet resultSet =statement.executeQuery("select * from AddressBook");
+            statement.executeUpdate("update AddressBook set firstname='apporva' where city='chennai'");
+            ResultSet resultSet =statement.executeQuery("Select * from AddressBook");
             while (resultSet.next()){
                 System.out.println("firstname" +resultSet.getString("firstname"));
                 System.out.println("lastname" +resultSet.getString("lastname"));

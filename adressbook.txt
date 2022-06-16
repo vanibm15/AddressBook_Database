@@ -1,0 +1,27 @@
+create database AddressBookServices;
+use AddressBook;
+show databases;
+create table AddressBook(firstname varchar(30),lastname varchar(30),address varchar(100),city varchar(30),
+state varchar(30),zip int,phonenumber varchar(30),email varchar(30));
+desc AddressBook;
+insert into AddressBook(firstname,lastname,address,city,state,zip,phonenumber,email)values('vani','bm','heggeri','hubli','karnataka',580024,'987456','vani2123')
+,('amit','sood','gandhinagar','mumbai','maharastra',500021,'456123789','amit@123'),
+('varsha','bm','dollorcolony','rajajinagar','bangalore',580021,'9653214578','vars@123'),
+('dimpu','lm','sainagar','pune','maharastra',50021,'985631457','dimp@123'),
+('shreyas','cm','rudenagar','chennai','tamilnadu',560021,'32564789','shre@123');
+select * from AddressBook;
+delete from AddressBook where firstname='dimpu';
+update AddressBook set firstname='apporva' where city='chennai';
+select count(*)from AddressBook;
+select firstname,city from AddressBook order by firstname;
+alter table AddressBook add column type varchar(30);
+update AddressBook set type ='family' where firstname='vani'; 
+update AddressBook set type ='friend' where firstname='amit'; 
+update AddressBook set type ='family' where firstname='varsha'; 
+update AddressBook set type ='profession' where firstname='apporva'; 
+select count(*)from AddressBook where type='family';
+select count(*)from AddressBook where type='friend';
+select count(*)from AddressBook where type='profession';
+insert into AddressBook(firstname,lastname,address,city,state,zip,phonenumber,email)values
+('dimpu','bg','sainagar','chennai','tamilnadu',500024,'9865456','dimp@123');
+update AddressBook set type ='family,friend' where firstname='dimpu'; 
